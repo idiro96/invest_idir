@@ -23,6 +23,8 @@ from odoo.exceptions import UserError
 class AccountAssetAssetInherited(models.Model):
     _inherit = "account.asset.asset"
 
+    
+
     cheak_wizard = fields.Boolean(default=False)
     product_id = fields.Many2one(comodel_name='product.template')
     etat_asset_id = fields.Many2one(comodel_name='invest.etat.asset')
@@ -38,7 +40,7 @@ class AccountAssetAssetInherited(models.Model):
     personnel_id = fields.Many2one(comodel_name='hr.employee')
     structure_id = fields.Many2one(comodel_name='hr.department')
     endroit_id_1 = fields.Many2one(comodel_name='invest.endroit')
-    affectation_ligne_ids = fields.One2many(comodel_name='invest.affectation', inverse_name='asset_id')
+    affectation_ligne_ids = fields.One2many(comodel_name='invest.affectation', inverse_name='asset_id',)
 
     maintenance_ligne_ids = fields.One2many(comodel_name='invest.maintenance.ligne', inverse_name='asset_id')
     depreciation_ligne2_ids = fields.One2many(comodel_name='invest.depreciation.annuel',

@@ -48,6 +48,7 @@
             <field name="name">Proposer Reforme </field>
             <field name="res_model">invest.proposer.reforme.asset</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'create': False}</field>
         </record>
 
 

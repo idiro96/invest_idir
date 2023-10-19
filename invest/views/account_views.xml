@@ -5,6 +5,11 @@
             <field name="model">account.asset.asset</field>
             <field name="inherit_id" ref="account_asset.view_account_asset_asset_purchase_tree"/>
             <field name="arch" type="xml">
+
+<!--                <xpath expr="//tree" position="attributes">-->
+<!--                    <attribute name="create">false</attribute>-->
+<!--                    <attribute name="state">close</attribute>-->
+<!--                </xpath>-->
                 <xpath expr="//tree//field[@name='name']" position="before">
                     <field name="code"></field>
                 </xpath>
@@ -248,7 +253,7 @@
                     <page string="Historique Affectation">
                         <tree>
                             <field name="affectation_ligne_ids">
-                                <tree>
+                                <tree create="false" delete="false">
                                     <field name="endroit_id"/>
                                     <field name="employee_id"/>
                                     <field name="date_affectation"/>
@@ -290,7 +295,6 @@
                             </tree>
                         </field>
                     </page>
-
                 </xpath>
             </field>
 
@@ -302,6 +306,8 @@
             <field name="view_mode">tree,kanban,form</field>
             <field name="view_id" ref="account_asset.view_account_asset_asset_purchase_tree"/>
             <field name="domain">[('state', '!=', 'reforme'),('state', '!=', 'close')]</field>
+            <field name="context">{'create': True}</field>
+
 
 
         </record>

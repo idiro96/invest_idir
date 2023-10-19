@@ -197,7 +197,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('typetest', '=', 'bureau')]</field>
-            <field name="context">{'default_typetest': 'bureau'}</field>
+            <field name="context">{'default_typetest': 'bureau', 'create': False}</field>
             <field name="view_id" ref="endroit_list"/>
         </record>
 
@@ -207,7 +207,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('typetest', '=', 'batiment')]</field>
-            <field name="context">{'default_typetest': 'batiment'}</field>
+            <field name="context">{'default_typetest': 'batiment', 'create': False}</field>
             <field name="view_id" ref="endroit_list"/>
         </record>
 
@@ -218,7 +218,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('typetest', '=', 'region')]</field>
-            <field name="context">{'default_typetest': 'region'}</field>
+            <field name="context">{'default_typetest': 'region', 'create': False}</field>
             <field name="view_id" ref="endroit_list"/>
         </record>
 
@@ -227,7 +227,7 @@
             <field name="res_model">invest.endroit</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('typetest', '=', 'site')]</field>
-            <field name="context">{'default_typetest': 'site'}</field>
+            <field name="context">{'default_typetest': 'site', 'create': False}</field>
             <field name="view_id" ref="endroit_list"/>
         </record>
 

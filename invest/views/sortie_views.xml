@@ -8,6 +8,7 @@
             <field name="res_model">account.asset.asset</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('state', '=', 'close')]</field>
+            <field name="context">{'create': False}</field>
         </record>
 
 

@@ -177,11 +177,16 @@ class invistissementGetValuesRepertoireAssetEtatSortie(models.AbstractModel):
                  ('date_sorti', '>=', data['form']['date_du']),
                  ('date_sorti', '<=', data['form']['date_au'])])
 
+        # else:
+        #     records = self.env['account.asset.asset'].search(
+        #         [('date_aquisition', '<=', data['form']['date_au']), ('date_sorti', '>=', data['form']['date_du']),
+        #          ('faible_valeur', '=', False), ('etat_asset_id', '!=', False),
+        #          ('date_sorti', '<=', data['form']['date_au'])])
+
         else:
             records = self.env['account.asset.asset'].search(
-                [('date_aquisition', '<=', data['form']['date_au']), ('date_sorti', '>=', data['form']['date_du']),
-                 ('faible_valeur', '=', False), ('etat_asset_id', '!=', False),
-                 ('date_sorti', '<=', data['form']['date_au'])])
+                [('date_aquisition', '<=', data['form']['date_au']),
+                 ('faible_valeur', '=', False),('state', '=', 'close')])
 
         return {
             'doc_model': 'account.asset.asset',
